@@ -8,6 +8,7 @@ class Logic
 public:
     Logic();
     bool play(unsigned int x, unsigned int y);
+    void checkWin();
 
 private:
 
