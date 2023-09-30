@@ -21,4 +21,4 @@ private:
     bool draw;
 };
 
-#endif;
+#endif
