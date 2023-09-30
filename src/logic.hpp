@@ -12,12 +12,10 @@ public:
     void startGame();
     bool running;
     char player;
-    std::array<std::array<char, 3>, 3> grid;
-
-private:
-    bool won;
-    char winner;
     bool draw;
+    char winner;
+    bool won;
+    std::array<std::array<char, 3>, 3> grid;
 };
 
 #endif

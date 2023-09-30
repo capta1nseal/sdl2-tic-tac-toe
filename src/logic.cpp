@@ -1,4 +1,5 @@
 #include "logic.hpp"
+#include "iostream"
 
 Logic::Logic()
 {
@@ -18,21 +19,21 @@ bool Logic::play(unsigned int x, unsigned int y)
     grid[x][y] = player;
     checkWin();
     if (player == 'X') player = 'O';
-    if (player == 'O') player = 'X';
+    else if (player == 'O') player = 'X';
     return true;
 }
 void Logic::checkWin()
 {
     for (int i = 0; i < 3; i++)
     {
-        if (grid[i][0] == grid[i][1] && grid[i][1] == grid[i][2])
+        if ((grid[i][0] == grid[i][1] && grid[i][1] == grid[i][2]) && grid[i][0] != '-')
         {
             won = true;
             winner = player;
             running = false;
             return;
         }
-        else if (grid[0][i] == grid[1][i] && grid[1][i] == grid[2][i])
+        else if ((grid[0][i] == grid[1][i] && grid[1][i] == grid[2][i]) && grid[0][i] != '-')
         {
             won = true;
             winner = player;
@@ -40,7 +41,7 @@ void Logic::checkWin()
             return;
         }
     }
-    if ((grid[0][0] == grid[1][1] && grid [1][1] == grid[2][2]) or (grid[0][2] == grid[1][1] && grid[1][1] == grid[2][0]))
+    if (((grid[0][0] == grid[1][1] && grid [1][1] == grid[2][2]) or (grid[0][2] == grid[1][1] && grid[1][1] == grid[2][0])) && grid[1][1] != '-')
     {
         won = true;
         winner = player;
