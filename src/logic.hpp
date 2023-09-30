@@ -9,13 +9,12 @@ public:
     Logic();
     bool play(unsigned int x, unsigned int y);
     void checkWin();
-
-private:
-
-
-    std::array<std::array<char, 3>, 3> grid;
+    void startGame();
     bool running;
     char player;
+    std::array<std::array<char, 3>, 3> grid;
+
+private:
     bool won;
     char winner;
     bool draw;

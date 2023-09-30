@@ -29,12 +29,14 @@ void Logic::checkWin()
         {
             won = true;
             winner = player;
+            running = false;
             return;
         }
         else if (grid[0][i] == grid[1][i] && grid[1][i] == grid[2][i])
         {
             won = true;
             winner = player;
+            running = false;
             return;
         }
     }
@@ -42,6 +44,7 @@ void Logic::checkWin()
     {
         won = true;
         winner = player;
+        running = false;
         return;
     }
     for (std::array<std::array<char, 3>, 3>::iterator column = grid.begin(); column != grid.end(); column++)
@@ -52,5 +55,11 @@ void Logic::checkWin()
         }
     }
     draw = true;
+    running = false;
+    return;
+}
+void Logic::startGame()
+{
+    running = true;
     return;
 }
